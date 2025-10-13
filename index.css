@@ -7,4 +7,29 @@ body{
 }
 header{
     background-image: url("./images/swords.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 0.1em;
+    color: whitesmoke;
+}
+
+main{
+    padding: 0 2rem;
+}
+
+#weapon,.weapon-info{
+display: flex;
+align-items: center;
+}
+
+#weapon{
+    gap: 0.5rem;
+}
+
+.purchase-weapon{
+    margin: 0 0 0 auto;
+}
+
+.weapon-info{
+    flex-direction: column;
 }
