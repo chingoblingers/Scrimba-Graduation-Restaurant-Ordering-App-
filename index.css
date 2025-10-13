@@ -19,17 +19,67 @@ main{
 
 #weapon,.weapon-info{
 display: flex;
-align-items: center;
 }
 
 #weapon{
     gap: 0.5rem;
+    align-items: center;
+    margin: 0.5rem 0 0 0;
+    border-bottom: 0.1rem solid black;
 }
 
 .purchase-weapon{
     margin: 0 0 0 auto;
+    width: 5.0rem;
+    height: 5.0rem;
+    border-radius: 5.0rem;
+    background: none;
 }
 
 .weapon-info{
     flex-direction: column;
+    gap: 0.3rem;
+}
+
+.cost{
+    font-weight: bold;
+}
+
+.weapon-info p, .weapon-info h2, .weapon-img{
+    margin: 0.1rem 0;
+}
+
+.weapon-img{
+    font-size: 7.8rem;
+}
+
+#modal{
+    position: fixed;
+    top: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+
+#modal-form{
+    border: 0.1rem solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+input{
+    padding: 1.2rem;
+}
+
+.modal-btn{
+    padding: 1.3rem;
+    background-color: #16DB99;
+    color: aliceblue;
+    margin: 1.5rem 0 0 0;
+    border: none;
 }
