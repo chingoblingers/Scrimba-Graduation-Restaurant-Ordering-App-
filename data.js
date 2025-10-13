@@ -1,4 +1,4 @@
-const menuArray = [
+export const menuArray = [
     {
         name: "Dai-Katana",
         catagory: ["steel", "two-handed", "close-quarters",],
