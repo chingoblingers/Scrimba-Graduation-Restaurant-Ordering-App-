@@ -9,15 +9,23 @@ header{
     background-image: url("./images/swords.jpg");
     background-size: cover;
     background-position: center;
-    padding: 0.1em;
+    padding: 1.5em;
     color: whitesmoke;
+}
+
+header p{
+    margin: 0;
+}
+
+header h1 {
+    margin: 0.5rem 0;
 }
 
 main{
     padding: 0 2rem;
 }
 
-#weapon,.weapon-info{
+#weapon,.weapon-info,.cart-details,.cart-price{
 display: flex;
 }
 
@@ -51,6 +59,29 @@ display: flex;
 
 .weapon-img{
     font-size: 7.8rem;
+}
+
+.cart-details{
+    gap: 0.3rem;
+    align-items: center;
+}
+
+
+#cart p {
+    margin: 0 0 0 auto;
+}
+
+.cart-details button {
+    background: none;
+    border: none;
+}
+
+.cart-price{
+    align-items: center;
+}
+
+.purchase-cart {
+    width: 100%;
 }
 
 #modal{
