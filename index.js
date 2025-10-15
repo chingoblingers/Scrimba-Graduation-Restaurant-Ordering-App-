@@ -2,6 +2,7 @@ import {menuArray} from "./data.js"
 const weaponGallery = document.getElementById("weapon-gallery")
 const cart = document.getElementById("cart-items")
 let weaponBasket = []
+const cartSection = document.getElementById("cart")
 
 function generateWeaponHtml(wepArr){
    const weaponMenu = wepArr.map(menu =>{
@@ -32,7 +33,6 @@ function renderWeaponList(arr){
 
 renderWeaponList(menuArray)
 
-
 function addToBasket(id, arr){
   arr.forEach(wep => {
     if(wep.id === id){
@@ -57,7 +57,12 @@ function generateBaskethtml(){
 }
 
 function renderBasket(){
-    cart.innerHTML = generateBaskethtml()
+    if (weaponBasket.length === 0){
+        cartSection.style.display = "none"
+    }else{
+        cart.innerHTML = generateBaskethtml()
+        cartSection.style.display = ""
+    }
 }
 
 weaponGallery.addEventListener("click", e =>{
@@ -79,3 +84,4 @@ function removeWeapon(id){
     weaponBasket = weaponBasket.filter(weapon => weapon.id !== id)
     renderBasket()
 }
+

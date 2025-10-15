@@ -66,6 +66,9 @@ display: flex;
     align-items: center;
 }
 
+#cart{
+    /* display: none; */
+}
 
 #cart p {
     margin: 0 0 0 auto;
