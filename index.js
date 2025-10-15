@@ -1,13 +1,14 @@
 import {menuArray} from "./data.js"
-const weaponContainer = document.getElementById("weapon-container")
+const weaponGallery = document.getElementById("weapon-gallery")
+const cart = document.getElementById("cart-items")
 
-function renderWeapon(wepArr){
-    const weaponMenu = wepArr.map(menu =>{
+function generateWeaponHtml(wepArr){
+   const weaponMenu = wepArr.map(menu =>{
        const {name,catagory,id,price,emoji} = menu
        return `
-       <section id="weapon">
+       <section class="weapon">
 
-    <p class="weapon-img" id="${id} "> ${emoji} </p>
+    <p class="weapon-img" id="${id}"> ${emoji} </p>
 
     <div class="weapon-info">
         <h2> ${name}  </h2>
@@ -21,7 +22,11 @@ function renderWeapon(wepArr){
        ` 
     }).join(" ")
 
-    weaponContainer.innerHTML+= weaponMenu
+    return weaponMenu
 }
 
-renderWeapon(menuArray)
+function renderWeaponList(arr){
+   weaponGallery.innerHTML = generateWeaponHtml(arr)
+}
+
+renderWeaponList(menuArray)

@@ -25,11 +25,11 @@ main{
     padding: 0 2rem;
 }
 
-#weapon,.weapon-info,.cart-details,.cart-price{
+.weapon,.weapon-info,.cart-details,.cart-price{
 display: flex;
 }
 
-#weapon{
+.weapon{
     gap: 0.5rem;
     align-items: center;
     margin: 0.5rem 0 0 0;
