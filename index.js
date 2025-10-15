@@ -33,14 +33,14 @@ function renderWeaponList(arr){
 
 renderWeaponList(menuArray)
 
-function addToBasket(id, arr){
-  arr.forEach(wep => {
-    if(wep.id === id){
-        weaponBasket.push(wep)
-    }
-  }); 
-renderBasket()
+function addToBasket(id, arr) {
+  const weapon = arr.find(wep => wep.id === id)
+  if (weapon) {
+    weaponBasket.push(weapon)
+    renderBasket()
+  }
 }
+
 
 function generateBaskethtml(){
   const finalBasket = weaponBasket.map(wep =>{
@@ -80,8 +80,12 @@ cart.addEventListener("click", e =>{
 } )
 
 
-function removeWeapon(id){
-    weaponBasket = weaponBasket.filter(weapon => weapon.id !== id)
-    renderBasket()
+function removeWeapon(id) {
+  const index = weaponBasket.findIndex(weapon => weapon.id === id)
+  if (index !== -1) {
+    weaponBasket.splice(index, 1)
+  }
+  renderBasket()
 }
+
 
