@@ -56,14 +56,22 @@ function generateBaskethtml(){
 
 }
 
-function renderBasket(){
-    if (weaponBasket.length === 0){
-        cartSection.style.display = "none"
-    }else{
-        cart.innerHTML = generateBaskethtml()
-        cartSection.style.display = ""
-    }
+function renderBasket() {
+  if (weaponBasket.length === 0) {
+    cartSection.style.display = "none"
+  } else {
+    const basketHtml = generateBaskethtml()
+    const totalHtml = `
+      <div class="cart-price">
+        <h2>Total Price:</h2>
+        <p>${calculateTotal()}$</p>
+      </div>
+    `
+    cart.innerHTML = basketHtml + totalHtml
+    cartSection.style.display = ""
+  }
 }
+
 
 weaponGallery.addEventListener("click", e =>{
     const selected = Number(e.target.dataset.add)
@@ -88,4 +96,7 @@ function removeWeapon(id) {
   renderBasket()
 }
 
+function calculateTotal() {
+  return weaponBasket.reduce((sum, weapon) => sum + weapon.price, 0)
+}
 
