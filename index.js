@@ -3,6 +3,9 @@ const weaponGallery = document.getElementById("weapon-gallery")
 const cart = document.getElementById("cart-items")
 let weaponBasket = []
 const cartSection = document.getElementById("cart")
+const modal = document.getElementById("modal")
+const purchaseBtn = document.querySelector(".purchase-cart")
+const modalForm = document.getElementById("modal-form")
 
 function generateWeaponHtml(wepArr){
    const weaponMenu = wepArr.map(menu =>{
