@@ -47,7 +47,7 @@ function generateBaskethtml(){
         return ` 
 <div class="cart-details">
 <h2> ${wep.name} </h2>
-<button> remove </button>
+<button data-remove="${wep.id}"> remove </button>
 <p> ${wep.price}</p>
 </div>
         `
@@ -67,3 +67,15 @@ weaponGallery.addEventListener("click", e =>{
     }
 })
 
+cart.addEventListener("click", e =>{
+    const selcted = Number(e.target.dataset.remove)
+    if(!isNaN(selcted)){
+        removeWeapon(selcted)
+    }
+} )
+
+
+function removeWeapon(id){
+    weaponBasket = weaponBasket.filter(weapon => weapon.id !== id)
+    renderBasket()
+}
